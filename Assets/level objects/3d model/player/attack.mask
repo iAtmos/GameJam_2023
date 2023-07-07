@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: attack
+  m_Mask: 00000000000000000000000000000000000000000000000001000000000000000100000000000000000000000000000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 0
+  - m_Path: Armature/RootBone
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.L/foot.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.L/foot.L/foot.L_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.L/leg_pole.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.L/leg_pole.L/leg_pole.L_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.R/foot.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.R/foot.R/foot.R_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.R/leg_pole.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_foot.R/leg_pole.R/leg_pole.R_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_hand.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/IK_hand.L/arm.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/IK_hand.L/arm.L/arm.L_end
+    m_Weight: 1
+  - m_Path: Armature/RootBone/IK_hand.L/hand_pole.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/IK_hand.L/hand_pole.L/hand_pole.L_end
+    m_Weight: 1
+  - m_Path: Armature/RootBone/IK_hand.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_hand.R/arm.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_hand.R/arm.R/arm.R_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_hand.R/hand_pole.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/IK_hand.R/hand_pole.R/hand_pole.R_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/eyes.001
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/eyes.001/eyes.001_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/eyes.002
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/eyes.002/eyes.002_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/IK_eyse
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/eyes/IK_eyse/IK_eyse_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.L/hand.001.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.L/hand.001.L/hand.002.L
+    m_Weight: 1
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.L/hand.001.L/hand.002.L/hand.002.L_end
+    m_Weight: 1
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.R/hand.001.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.R/hand.001.R/hand.002.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/hand_BLOCK.R/hand.001.R/hand.002.R/hand.002.R_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.L/leg.001.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.L/leg.001.L/leg.002.L
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.L/leg.001.L/leg.002.L/leg.002.L_end
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.R/leg.001.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.R/leg.001.R/leg.002.R
+    m_Weight: 0
+  - m_Path: Armature/RootBone/pelvis/pelvis_BLOCK.R/leg.001.R/leg.002.R/leg.002.R_end
+    m_Weight: 0
+  - m_Path: dice_low
+    m_Weight: 0
