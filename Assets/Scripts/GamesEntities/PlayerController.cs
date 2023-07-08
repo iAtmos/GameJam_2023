@@ -7,9 +7,6 @@ public class PlayerController : AbstractEntity
     private float horizontalX;
     private float horizontalZ;
     private Vector3 moveDerection;
-    
-    //private Vector3 currentRotatinPlayer;
-    //private float turnPlayer;
 
     [Header("Сharacter Parameters")]
     private Animator animator;
@@ -36,7 +33,7 @@ public class PlayerController : AbstractEntity
     protected void FixedUpdate()
     {
         PlayerMove();
-        //PlayerRotation();
+        //PlayerRotation(); Вращение мышкой
     }
 
     private void PlayerInput()
@@ -56,23 +53,4 @@ public class PlayerController : AbstractEntity
 
         rb.AddRelativeForce(moveDerection.normalized * correctorSpeed * Time.fixedDeltaTime, ForceMode.Force);
     }
-
-    //private void PlayerRotation()
-    //{
-    //    var currentVelocity = rb.velocity;
-    //    //Debug.Log(currentVelocity);
-    //    try
-    //    {
-    //        var hypotenuseVelocity = Mathf.Sqrt(currentVelocity.z * currentVelocity.z
-    //            + currentVelocity.x * currentVelocity.x);
-
-    //        // Угол в градусах (Y) - текущее направление движения игрока относительно оси Z
-    //        turnPlayer = Mathf.Sin(currentVelocity.z / hypotenuseVelocity)
-    //            / MathParams.ConvertRadiansInDegrees;
-    //        Debug.Log(turnPlayer);
-    //    }
-    //    catch
-    //    {
-    //    }
-    //}
 }
