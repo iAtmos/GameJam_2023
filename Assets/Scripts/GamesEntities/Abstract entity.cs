@@ -17,7 +17,6 @@ public abstract class AbstractEntity : MonoBehaviour
     protected virtual void Start()
     {
         isLiveEntity = true;
-        MaxHP = 100f;
         CurrentHP = MaxHP;
     }
 

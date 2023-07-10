@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 30918095296558618}
   - component: {fileID: 7631886621725065569}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,9 +150,9 @@ MonoBehaviour:
   _explosion: {fileID: 0}
   _whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   _Damage: 20
   _explosionRange: 1
-  _MaxCollisions: 0
-  _maxLifeTime: 5
+  _MaxCollisions: 1
+  _maxLifeTime: 3
   _explosionSound: {fileID: 0}

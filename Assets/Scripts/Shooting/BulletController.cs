@@ -23,30 +23,28 @@ public class BulletController : MonoBehaviour
     //References
 
     private int _collisions;
-    private bool _exploaded = false;
 
     private void Update()
     {
-        if (!_exploaded)
+        //When to explode:
+        if (_collisions > _MaxCollisions)
         {
-            //When to explode:
-            if (_collisions > _MaxCollisions)
-            {
-                Explode();
-            }
+            Debug.Log("Destroyed by collision");
+            Destroy(gameObject);
+        }
 
-            //Count down lifetime
-            _maxLifeTime -= Time.deltaTime;
-            if (_maxLifeTime < 0f)
-            {
-                Explode();
-            }
+        //Count down lifetime
+        _maxLifeTime -= Time.deltaTime;
+        if (_maxLifeTime < 0f)
+        {
+
+            Debug.Log("Lifetime esceeded");
+            Destroy(gameObject);
         }
     }
 
     private void Explode()
     {
-        _exploaded = true;
         //Instantiate explosion
         if (_explosion != null)
         {
@@ -55,7 +53,14 @@ public class BulletController : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
         for (int i = 0; i < enemies.Length; i++)
         {
-
+            Debug.Log("damage gived");
+            enemies[i].GetComponent<AiController>().TakeDamage(_Damage);
+        }
+        Collider[] player = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
+        for(int i = 0; i < enemies.Length; i++)
+        {
+            Debug.Log("damage gived");
+            player[i].GetComponent<PlayerController>().TakeDamage(_Damage);
         }
         //add Delay, to debug
         Invoke("Delay", 0.05f);
@@ -68,18 +73,13 @@ public class BulletController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //don't compare with other bullets
-        if(collision.collider.CompareTag("Bullet"))
-        {
-            return;
-        }
-
         //count up collisions
         _collisions++;
 
         //Explode if bullet has an enemy Directly and explodeOnTouch is activated
-        if(collision.collider.CompareTag("Enemy"))
+        if(collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Player"))
         {
+            Debug.Log("Hitted some Entity");
             Explode();
         }
     }
