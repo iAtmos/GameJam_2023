@@ -47,7 +47,6 @@ namespace myStateMachine
 
         public void MovePlayer()
         {
-            
             moveDirection = orientation.forward * input.Player.Move.ReadValue<Vector2>().y + orientation.right * input.Player.Move.ReadValue<Vector2>().x;
             rb.AddForce(moveDirection.normalized * walkingSpeed * 10f, ForceMode.Force);
             Debug.Log(rb.velocity);
