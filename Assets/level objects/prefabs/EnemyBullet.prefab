@@ -151,7 +151,7 @@ MonoBehaviour:
   _whatIsEnemies:
     serializedVersion: 2
     m_Bits: 8
-  _Damage: 20
+  _Damage: 10
   _explosionRange: 1
   _MaxCollisions: 0
   _maxLifeTime: 3

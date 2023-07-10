@@ -43,9 +43,11 @@ public class AiController : AbstractEntity
         }
         else
         {
+            Debug.Log("Patroling");
             if (transform.position != patrolPoints[currentPointIndex].position)
             {
                 transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPointIndex].position, MaxSpeedMove * Time.deltaTime);
+                Debug.Log("Goint to point " + currentPointIndex + 1);
             }
             else
             {
@@ -106,6 +108,8 @@ public class AiController : AbstractEntity
         CurrentHP -= damage;
         if (!CheckLiveEyntity())
         {
+            GameObject.Find("Player").GetComponent<PlayerController>().exp++;
+            GameObject.Find("Player").GetComponent<PlayerController>().CheckLvlUp();
             _spawnEnemy.enemyCount--;
             Destroy(gameObject);
         };

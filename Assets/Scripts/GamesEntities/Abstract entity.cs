@@ -9,9 +9,9 @@ public abstract class AbstractEntity : MonoBehaviour
         public const string HorizontalZ = nameof(HorizontalZ);
     }
 
-    [field: SerializeField] protected float MaxHP { get; set; }
-    [field: SerializeField] protected float CurrentHP { get; set; }
-    [field: SerializeField] protected float MaxSpeedMove { get; set; }
+    [field: SerializeField] public float MaxHP { get; set; }
+    [field: SerializeField] public float CurrentHP { get; set; }
+    [field: SerializeField] public float MaxSpeedMove { get; set; }
     protected bool isLiveEntity { get; private set; }
 
     protected virtual void Start()

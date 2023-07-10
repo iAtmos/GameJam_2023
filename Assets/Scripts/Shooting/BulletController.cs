@@ -10,7 +10,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] private LayerMask _whatIsEnemies;
 
     //Damage
-    [SerializeField] private int _Damage;
+    [SerializeField] public int _Damage;
     [SerializeField] private float _explosionRange;
 
     //lifetime

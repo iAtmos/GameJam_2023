@@ -10,6 +10,7 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
     public Transform[] spawnPoints;
+    public Transform[] patrolPoints;
     int spawnPoint;
     public float spawnTime;
     public int enemyCount = 0;
@@ -28,7 +29,8 @@ public class SpawnEnemy : MonoBehaviour
         while(enemyCount <= enemyMax)
         {
             spawnPoint = Random.Range(0, spawnPoints.Length);
-            Instantiate(enemy, spawnPoints[spawnPoint].transform.position, Quaternion.identity);
+            var newenemy = Instantiate(enemy, spawnPoints[spawnPoint].transform.position, Quaternion.identity);
+            newenemy.GetComponent<AiController>().patrolPoints = patrolPoints;
             yield return new WaitForSeconds(spawnTime);
             enemyCount++;
         }

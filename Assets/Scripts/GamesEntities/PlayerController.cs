@@ -16,13 +16,19 @@ public class PlayerController : AbstractEntity
     private Animator animator;
     private Rigidbody rb;
 
+    [Header("Character level stats")]
+    public int currentLevel;
+    public int exp;
+
     [Header("Animtaions State")]
     private const string SpeedWalk = nameof(SpeedWalk);
 
+    public LevelUpUpgrades levelUpUpgrades;
+    
     protected override void Start()
     {
+        levelUpUpgrades = GameObject.Find("ManagerGamesScean").gameObject.GetComponent<LevelUpUpgrades>();
         base.Start();
-
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         animator.SetFloat(SpeedWalk, 0f);
@@ -73,5 +79,15 @@ public class PlayerController : AbstractEntity
         {
             Destroy(gameObject);
         };
+    }
+    
+    public void CheckLvlUp()
+    {
+        if(exp>=10)
+        {
+            currentLevel++;
+            exp = 0;
+            levelUpUpgrades.GetUpgrades();
+        }
     }
 }
