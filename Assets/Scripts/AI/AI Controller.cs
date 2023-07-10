@@ -26,6 +26,7 @@ public class AiController : AbstractEntity
     [Header("References")]
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _attackPoint;
+    [SerializeField] private SpawnEnemy _spawnEnemy;
 
 
     private void Update()
@@ -105,6 +106,7 @@ public class AiController : AbstractEntity
         CurrentHP -= damage;
         if (!CheckLiveEyntity())
         {
+            _spawnEnemy.enemyCount--;
             Destroy(gameObject);
         };
     }

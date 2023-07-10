@@ -54,13 +54,14 @@ public class BulletController : MonoBehaviour
         foreach(var enemy in enemies)
         {
             Debug.Log("damage gived");
-            enemy.GetComponent<AiController>().TakeDamage(_Damage);         
-        }
-        Collider[] players = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
-        foreach (var player in players)
-        {
-            Debug.Log("damage gived");
-            player.GetComponent<PlayerController>().TakeDamage(_Damage);
+            if (enemy.GetComponent<AiController>() != null)
+            {
+                enemy.GetComponent<AiController>().TakeDamage(_Damage);
+            }
+            if (enemy.GetComponent<PlayerController>() != null)
+            {
+                enemy.GetComponent<PlayerController>().TakeDamage(_Damage);
+            }
         }
         //add Delay, to debug
         Invoke("Delay", 0.05f);
