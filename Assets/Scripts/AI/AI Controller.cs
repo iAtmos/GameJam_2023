@@ -6,19 +6,71 @@ using UnityEngine.AI;
 
 public class AiController : AbstractEntity
 {
+    [Header("AI following")]
     public Transform target;
     public float minimumDistance;
     public float attackDistance;
+
+    [Header("AI patrolling")]
+    public Transform[] patrolPoints;
+    public float waitTime;
+    public float detectionDistance;
+    int currentPointIndex;
+    bool once;
+
+    [Header("Attack")]
     public float _shootForce;
     public float _timeBetweenShooting;
     private float _nextShotTime;
+
+    [Header("References")]
     [SerializeField] private GameObject _bullet;
     [SerializeField] private Transform _attackPoint;
 
 
     private void Update()
     {
-        Follow();
+        Patrol();
+    }
+
+    private void Patrol()
+    {
+        if (Vector3.Distance(transform.position, target.position) <= detectionDistance)
+        {
+            Debug.Log("Started Pursuit");
+            Follow();
+        }
+        else
+        {
+            if (transform.position != patrolPoints[currentPointIndex].position)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPointIndex].position, MaxSpeedMove * Time.deltaTime);
+            }
+            else
+            {
+                if (once == false)
+                {
+                    Debug.Log("started waiting");
+                    StartCoroutine(Wait());
+                    once = true;
+                }
+            }
+        }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(waitTime);
+        if (currentPointIndex + 1 < patrolPoints.Length)
+        {
+            currentPointIndex++;
+        }
+        else
+        {
+            currentPointIndex = 0;
+        }
+        Debug.Log("waiting ended");
+        once = false;
     }
 
     private void Follow()

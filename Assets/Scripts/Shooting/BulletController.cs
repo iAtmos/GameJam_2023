@@ -60,7 +60,7 @@ public class BulletController : MonoBehaviour
         foreach (var player in players)
         {
             Debug.Log("damage gived");
-            player.GetComponent<AiController>().TakeDamage(_Damage);
+            player.GetComponent<PlayerController>().TakeDamage(_Damage);
         }
         //add Delay, to debug
         Invoke("Delay", 0.05f);
