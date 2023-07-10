@@ -15,13 +15,11 @@ public class WeaponController : MonoBehaviour
     //Gun stats
     public float _timeBetweenShooting;
 
-
     //bools 
     private bool _shooting;
     private bool readyToShoot = true;
 
     //References
-    [SerializeField] private Camera _fpsCam;
     [SerializeField] private Transform _attackPoint;
 
     //Sounds

@@ -153,9 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 3908836912680657496, guid: 36916d9fd27c08a41b499c03367f2b68, type: 3}
-  _shootForce: 10
+  _shootForce: 0.1
   _timeBetweenShooting: 1
-  _fpsCam: {fileID: 0}
   _attackPoint: {fileID: 842460695265306239}
   _shootingSound: {fileID: 0}
   _allowInvoke: 1
