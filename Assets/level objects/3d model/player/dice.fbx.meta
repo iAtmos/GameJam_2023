@@ -41,7 +41,7 @@ ModelImporter:
       name: attack
       takeName: Armature|attack
       internalID: -251351218608039746
-      firstFrame: 0
+      firstFrame: 1
       lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
@@ -99,7 +99,7 @@ ModelImporter:
       name: end_attack
       takeName: Armature|end_attack
       internalID: 4680588676523433387
-      firstFrame: 0
+      firstFrame: 1
       lastFrame: 10
       wrapMode: 0
       orientationOffsetY: 0
@@ -154,7 +154,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|walk
+      name: walk
       takeName: Armature|walk
       internalID: -4799524434163024911
       firstFrame: 1
