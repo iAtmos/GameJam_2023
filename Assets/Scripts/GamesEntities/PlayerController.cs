@@ -64,5 +64,6 @@ public class PlayerController : AbstractEntity
     {
         var differenceBetweenCursorAndPlayerPosition = viewPlayer.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         rotationY = Mathf.Atan2(differenceBetweenCursorAndPlayerPosition.x, differenceBetweenCursorAndPlayerPosition.z) * Mathf.Rad2Deg;
+        Debug.Log(differenceBetweenCursorAndPlayerPosition);
     }
 }
