@@ -23,7 +23,7 @@ public class AiController : AbstractEntity
 
     private void Follow()
     {
-        transform.rotation = Quaternion.LookRotation(target.transform.position);
+        //transform.rotation = Quaternion.LookRotation(target.transform.position);
         if (Vector3.Distance(transform.position, target.position) > minimumDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.position, MaxSpeedMove * Time.deltaTime);

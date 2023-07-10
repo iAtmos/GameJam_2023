@@ -115,6 +115,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be9406f1034ba16489e4a1e3a5ef7ac7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5681916978113878067}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: be9406f1034ba16489e4a1e3a5ef7ac7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3611575292056545358}
     - targetCorrespondingSourceObject: {fileID: -5176755129533499167, guid: be9406f1034ba16489e4a1e3a5ef7ac7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9222944376254612611}
@@ -144,7 +147,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.05, y: 1.429906, z: 0.9}
   m_Center: {x: 0.007157385, y: 0.6932069, z: -0.03}
@@ -158,14 +161,14 @@ BoxCollider:
   m_Material: {fileID: 13400000, guid: 6253e514021bf5c4c81dd7e4294544ef, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 118
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1.05, y: 1.4299058, z: 0.9}
   m_Center: {x: 0.007157385, y: 0.6932069, z: -0.03}
@@ -217,6 +220,27 @@ MonoBehaviour:
   <CurrentHP>k__BackingField: 100
   <MaxSpeedMove>k__BackingField: 10
   viewPlayer: {fileID: 0}
+--- !u!65 &3611575292056545358
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2770638916966594247}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &3258523409375227005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: be9406f1034ba16489e4a1e3a5ef7ac7, type: 3}

@@ -39,7 +39,7 @@ public class BulletController : MonoBehaviour
         {
 
             Debug.Log("Lifetime esceeded");
-            Destroy(gameObject);
+            Explode();
         }
     }
 
@@ -51,16 +51,16 @@ public class BulletController : MonoBehaviour
             Instantiate(_explosion, transform.position, Quaternion.identity);
         }
         Collider[] enemies = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
-        for (int i = 0; i < enemies.Length; i++)
+        foreach(var enemy in enemies)
         {
             Debug.Log("damage gived");
-            enemies[i].GetComponent<AiController>().TakeDamage(_Damage);
+            enemy.GetComponent<AiController>().TakeDamage(_Damage);         
         }
-        Collider[] player = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
-        for(int i = 0; i < enemies.Length; i++)
+        Collider[] players = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
+        foreach (var player in players)
         {
             Debug.Log("damage gived");
-            player[i].GetComponent<PlayerController>().TakeDamage(_Damage);
+            player.GetComponent<AiController>().TakeDamage(_Damage);
         }
         //add Delay, to debug
         Invoke("Delay", 0.05f);

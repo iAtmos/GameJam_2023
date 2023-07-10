@@ -153,6 +153,6 @@ MonoBehaviour:
     m_Bits: 64
   _Damage: 20
   _explosionRange: 1
-  _MaxCollisions: 1
+  _MaxCollisions: 0
   _maxLifeTime: 3
   _explosionSound: {fileID: 0}
