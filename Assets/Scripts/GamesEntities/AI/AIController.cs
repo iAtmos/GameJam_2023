@@ -11,6 +11,7 @@ public class AIController : AbstractEntity
     private const string SpeedWalk = nameof(SpeedWalk);
     [field: SerializeField] private int angularSpeedAI;
     [field: SerializeField] private int accelerationAI;
+    private Spawner _spawnEnemy;
 
     protected override void Start()
     {
@@ -28,5 +29,25 @@ public class AIController : AbstractEntity
     {
         var speedAnimation = ConversionRange(agent.velocity.magnitude, MaxSpeedMove);
         animator.SetFloat(SpeedWalk, speedAnimation);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log("NPC damage recived");
+        CurrentHP -= damage;
+        Debug.Log(CheckLiveEyntity());
+        if (!CheckLiveEyntity())
+        {
+            GameObject.Find("Player").GetComponent<PlayerController>().exp++;
+            GameObject.Find("Player").GetComponent<PlayerController>().CheckLvlUp();
+            Invoke("DestroyAI", 0.15f);
+            _spawnEnemy.DeathEntity(gameObject);
+            Destroy(gameObject);
+        };
+    }
+
+    public void DestroyAI()
+    {
+        Destroy(gameObject);
     }
 }

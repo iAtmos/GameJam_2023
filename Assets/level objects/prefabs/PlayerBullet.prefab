@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2398624524005089191}
   - component: {fileID: 30918095296558618}
   - component: {fileID: 7631886621725065569}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -150,7 +150,7 @@ MonoBehaviour:
   _explosion: {fileID: 0}
   _whatIsEnemies:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 72
   _Damage: 20
   _explosionRange: 1
   _MaxCollisions: 0

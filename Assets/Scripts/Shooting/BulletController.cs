@@ -53,13 +53,14 @@ public class BulletController : MonoBehaviour
         Collider[] enemies = Physics.OverlapSphere(transform.position, _explosionRange, _whatIsEnemies);
         foreach(var enemy in enemies)
         {
-            Debug.Log("damage gived");
-            if (enemy.GetComponent<AiController>() != null)
+            if (enemy.GetComponent<AIController>() != null)
             {
-                enemy.GetComponent<AiController>().TakeDamage(_Damage);
+                Debug.Log("NPC damage gived");
+                enemy.GetComponent<AIController>().TakeDamage(_Damage);
             }
             if (enemy.GetComponent<PlayerController>() != null)
             {
+                Debug.Log("Player damage gived");
                 enemy.GetComponent<PlayerController>().TakeDamage(_Damage);
             }
         }
@@ -76,7 +77,7 @@ public class BulletController : MonoBehaviour
     {
         //count up collisions
         _collisions++;
-
+        
         //Explode if bullet has an enemy Directly and explodeOnTouch is activated
         if(collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Player"))
         {

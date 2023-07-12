@@ -24,14 +24,27 @@ public class PlayerController : AbstractEntity
     private const string SpeedWalk = nameof(SpeedWalk);
 
     public LevelUpUpgrades levelUpUpgrades;
+    private PlayerInput input;
+    public GameObject gameOver;
     
     protected override void Start()
     {
+        input = new PlayerInput();
+        input.Enable();
         levelUpUpgrades = GameObject.Find("ManagerGamesScean").gameObject.GetComponent<LevelUpUpgrades>();
         base.Start();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         animator.SetFloat(SpeedWalk, 0f);
+    }
+
+    protected void OnEnable()
+    {
+        input.Enable();
+    }
+    protected void OnDisable()
+    {
+        input.Disable();
     }
 
     protected void Update()
@@ -49,8 +62,8 @@ public class PlayerController : AbstractEntity
 
     private void PlayerInput()
     {
-        horizontalX = Input.GetAxis(MoveParams.HorizontalX);
-        horizontalZ = Input.GetAxis(MoveParams.HorizontalZ);
+        horizontalX = input.Player.Move.ReadValue<Vector2>().x;
+        horizontalZ = input.Player.Move.ReadValue<Vector2>().y;
     }
 
     private void PlayerMove()
@@ -77,6 +90,7 @@ public class PlayerController : AbstractEntity
         CurrentHP -= damage;
         if (!CheckLiveEyntity())
         {
+            gameOver.GetComponent<GameOverMeny>().OnDeath();
             Destroy(gameObject);
         };
     }

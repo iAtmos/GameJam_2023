@@ -4,29 +4,31 @@ using UnityEngine;
 public class AIAttack : AISystems
 {
     [Header("Preference shooting")]
-    [SerializeField] private GameObject positionSpawnShot;
-    //[SerializeField] private Missile prefabShot; // œÂÙ‡· Ô‡ÚÓÌ‡
-    public float distanceAttack { get; private set; }
+    [SerializeField] private Transform positionSpawnShot;
+    [SerializeField] private GameObject _bullet;
+    [SerializeField] private float _shootForce;
+    [SerializeField] private GameObject target;
+    public float _timeBetweenShooting;
+    private float _nextShotTime = 0;
+    public float distanceAttack;
 
     public void Shot()
     {
-        canShot = false;
-        // ...
-        // ...
-        // ...
-        //StartCoroutine(RechargeGun());
+        GameObject currentBullet = Instantiate(_bullet, positionSpawnShot.position, Quaternion.identity);
+        currentBullet.GetComponent<Rigidbody>().AddForce(positionSpawnShot.transform.forward * _shootForce, ForceMode.Impulse);
     }
-
-    //private IEnumerator RechargeGun()
-    //{
-    //    yield return new WaitForSeconds(prefabShot.CooldownTime);
-    //    canShot = true;
-    //}
 
     public void —heckingAttackCondition()
     {
-        if (AIStatusCurent == AIStatus.chase && canShot
+        Debug.Log(AIStatusCurent);
+        if (AIStatusCurent == AIStatus.chase
             && agent.remainingDistance - agent.stoppingDistance < distanceAttack)
-            Shot();
+        {
+            if (Time.time > _nextShotTime)
+            {
+                Shot();
+                _nextShotTime = Time.time + _timeBetweenShooting;
+            }
+        }
     }
 }

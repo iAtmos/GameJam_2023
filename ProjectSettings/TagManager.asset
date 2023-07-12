@@ -5,16 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - AISystem
+  - Bullet
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
   - Environment
   - Player
-  - 
+  - Bullet
   - 
   - 
   - 
