@@ -6,7 +6,7 @@ public class AIAttack : AISystems
     [Header("Preference shooting")]
     [SerializeField] private GameObject positionSpawnShot;
     //[SerializeField] private Missile prefabShot; // Префаб патрона
-    [SerializeField] private float distanceAttack;
+    public float distanceAttack { get; private set; }
 
     public void Shot()
     {

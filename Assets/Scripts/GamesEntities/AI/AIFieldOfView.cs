@@ -4,10 +4,10 @@ using UnityEngine;
 public class AIFieldOfView : AISystems
 {
     [Header("Field of view settings")]
-    //[SerializeField] private float RadiusFieldsView;
+    //[field: SerializeField] private float RadiusFieldsView;
     public float RadiusFieldsView; // Заменить после настройки
     [Range(0, 360)] public float AngleView;
-    [SerializeField] private LayerMask TargetMask;
+    [field: SerializeField] private LayerMask TargetMask;
 
     [Header("Masked objects")]
     private Collider[] objectsArea;
