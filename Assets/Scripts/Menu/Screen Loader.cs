@@ -5,20 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ScreenLoader : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SceneLoad(int index)
     {
         SceneManager.LoadScene(index);
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 }

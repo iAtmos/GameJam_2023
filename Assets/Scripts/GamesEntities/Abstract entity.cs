@@ -1,8 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
+
+
 
 public abstract class AbstractEntity : MonoBehaviour
 {
+    public Scrollbar ScrollbarHP;
     protected static class MoveParams
     {
         public const string HorizontalX = nameof(HorizontalX);
@@ -34,5 +38,12 @@ public abstract class AbstractEntity : MonoBehaviour
         var diffInputRange = MathF.Abs(inputRangeMax - inputRangeMin);
         var convFactor = (diffOutputRange / diffInputRange);
         return (outputRangeMin + (convFactor * (valueConverted - inputRangeMin)));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bullet"))
+            CurrentHP -= 1;
+        ScrollbarHP.size = CurrentHP;
     }
 }
