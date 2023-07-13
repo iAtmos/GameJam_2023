@@ -192,6 +192,10 @@ PrefabInstance:
       value: Lamp_Wall (2)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -275,6 +279,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_Name
       value: Lamp_Wall (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -367,6 +375,10 @@ PrefabInstance:
       value: Lamp_Wall (8)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -395,7 +407,7 @@ GameObject:
   - component: {fileID: 123779044}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -413,15 +425,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -653,7 +665,7 @@ GameObject:
   - component: {fileID: 168481651}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -686,15 +698,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -719,10 +731,10 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingLayerMask: 1
   m_Lightmapping: 2
   m_LightShadowCasterMode: 0
@@ -746,6 +758,7 @@ GameObject:
   - component: {fileID: 205951642}
   - component: {fileID: 205951641}
   - component: {fileID: 205951643}
+  - component: {fileID: 205951644}
   m_Layer: 0
   m_Name: OrthographicCamera
   m_TagString: Untagged
@@ -789,7 +802,7 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 5.8
-  m_Depth: 0
+  m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -879,6 +892,23 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &205951644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205951639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: ee60f16fdb44ffd4fae09aab5142938c, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &321654441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,7 +1037,7 @@ GameObject:
   - component: {fileID: 356249037}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -1040,15 +1070,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1281,7 +1311,7 @@ GameObject:
   - component: {fileID: 442529273}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -1314,15 +1344,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1497,7 +1527,7 @@ GameObject:
   - component: {fileID: 632609868}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -1530,15 +1560,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -1626,6 +1656,7 @@ GameObject:
   - component: {fileID: 798441759}
   - component: {fileID: 798441758}
   - component: {fileID: 798441760}
+  - component: {fileID: 798441761}
   m_Layer: 0
   m_Name: PerspectiveCamera
   m_TagString: Untagged
@@ -1692,7 +1723,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 2
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1767,6 +1798,23 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &798441761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798441756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: ee60f16fdb44ffd4fae09aab5142938c, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &803748381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1779,7 +1827,7 @@ GameObject:
   - component: {fileID: 803748383}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -1812,15 +1860,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -102459,6 +102507,10 @@ PrefabInstance:
       value: Lamp_Wall (10)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -102542,6 +102594,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_Name
       value: Lamp_Wall (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -102657,7 +102713,7 @@ GameObject:
   - component: {fileID: 1073474353}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -102690,15 +102746,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -102808,6 +102864,10 @@ PrefabInstance:
       value: Lamp_Wall (9)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -102836,7 +102896,7 @@ GameObject:
   - component: {fileID: 1095150687}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -102869,15 +102929,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -103131,6 +103191,10 @@ PrefabInstance:
       value: Lamp_Wall (6)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -103159,7 +103223,7 @@ GameObject:
   - component: {fileID: 1180737034}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -103192,15 +103256,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -103308,6 +103372,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_Name
       value: Lamp_Wall (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -103503,7 +103571,7 @@ GameObject:
   - component: {fileID: 1244083024}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -103536,15 +103604,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -103886,6 +103954,10 @@ PrefabInstance:
       value: Lamp_Wall (15)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -103998,6 +104070,10 @@ PrefabInstance:
       value: Lamp_Wall
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -104026,7 +104102,7 @@ GameObject:
   - component: {fileID: 1470590120}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -104059,15 +104135,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -104177,6 +104253,10 @@ PrefabInstance:
       value: Lamp_Wall (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -104262,6 +104342,10 @@ PrefabInstance:
       value: Lamp_Wall (11)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -104290,7 +104374,7 @@ GameObject:
   - component: {fileID: 1506602424}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -104323,15 +104407,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -104439,6 +104523,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_Name
       value: Lamp_Wall (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -104566,6 +104654,10 @@ PrefabInstance:
       value: Lamp_Wall (7)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -104594,7 +104686,7 @@ GameObject:
   - component: {fileID: 1694992735}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -104627,15 +104719,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -104688,7 +104780,7 @@ GameObject:
   - component: {fileID: 1721744808}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -104721,15 +104813,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -104927,7 +105019,7 @@ GameObject:
   - component: {fileID: 1850350794}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -104960,15 +105052,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
@@ -105066,6 +105158,10 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_ReceiveGI
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_ImportantGI
       value: 0
       objectReference: {fileID: 0}
@@ -105073,9 +105169,21 @@ PrefabInstance:
       propertyPath: m_AutoUVMaxDistance
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_Name
       value: Lamp_Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -105476,6 +105584,10 @@ PrefabInstance:
       value: Lamp_Wall (12)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
+      propertyPath: m_TagString
+      value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fdbfb18c3fd5c9943ac9b5fbcebdfc32, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 1
       objectReference: {fileID: 0}
@@ -105538,7 +105650,7 @@ GameObject:
   - component: {fileID: 2069299863}
   m_Layer: 0
   m_Name: Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -105571,15 +105683,15 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.30936277, g: 0.6571939, b: 0.8301887, a: 1}
   m_Intensity: 2
-  m_Range: 10
+  m_Range: 15
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 1
+    m_Strength: 0.16
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
