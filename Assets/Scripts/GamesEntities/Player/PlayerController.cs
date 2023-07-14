@@ -20,7 +20,9 @@ public class PlayerController : AbstractEntity
 
     [Header("Character level stats")]
     public int currentLevel;
+    public int expToNextLevel;
     public int exp;
+    
 
     [Header("Animtaions State")]
     private const string SpeedWalk = nameof(SpeedWalk);
@@ -110,13 +112,14 @@ public class PlayerController : AbstractEntity
     
     public void CheckLvlUp()
     {
-        if(exp>=10)
+        if(exp>=expToNextLevel)
         {
             currentLevel++;
             exp = 0;
             levelUpUpgrades.GetUpgrades();
         }
     }
+
     public void SetUI()
     {
         HealthUI.text = MaxHP.ToString();
