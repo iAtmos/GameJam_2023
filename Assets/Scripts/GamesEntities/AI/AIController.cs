@@ -11,7 +11,7 @@ public class AIController : AbstractEntity
     private const string SpeedWalk = nameof(SpeedWalk);
     [field: SerializeField] private int angularSpeedAI;
     [field: SerializeField] private int accelerationAI;
-    private Spawner _spawnEnemy;
+    public GameObject _spawnEnemy;
 
     protected override void Start()
     {
@@ -40,12 +40,12 @@ public class AIController : AbstractEntity
         {
             GameObject.Find("Player").GetComponent<PlayerController>().exp++;
             GameObject.Find("Player").GetComponent<PlayerController>().CheckLvlUp();
-            Invoke("DestroyAI", 0.15f);
-            _spawnEnemy.DeathEntity(gameObject);
+            GameObject.Find("Player").GetComponent<PlayerController>().SetUI();
+            _spawnEnemy.GetComponent<Spawner>().DeathEntity();
             Destroy(gameObject);
         };
     }
-
+    
     public void DestroyAI()
     {
         Destroy(gameObject);

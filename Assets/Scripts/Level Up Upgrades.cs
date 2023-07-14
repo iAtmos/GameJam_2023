@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection.Emit;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class LevelUpUpgrades : MonoBehaviour
     public GameObject button2;
     public GameObject button3;
 
-    public TextMeshPro label1;
+    public GameObject text;
 
     public GameObject player;
     public GameObject bullet;
@@ -27,21 +28,23 @@ public class LevelUpUpgrades : MonoBehaviour
         Damage = 1,
         FireRate = 2,
         MovementSpeed = 3,
-        BulletSpeed = 4
+        BulletSpeed = 4,
+        ShootingLines = 5
     }
 
     public void GetUpgrades()
     {
         Time.timeScale = 0f;
+        text.SetActive(true);
         button1.SetActive(true);
         button2.SetActive(true);
         button3.SetActive(true);
         Cursor.visible = true;
-        System.Enum.TryParse(Random.Range(0, 5).ToString(), out Upgrades upgrade1);
+        System.Enum.TryParse(Random.Range(0, 6).ToString(), out Upgrades upgrade1);
         Upgrade1 = upgrade1.ToString();
-        System.Enum.TryParse(Random.Range(0, 5).ToString(), out Upgrades upgrade2);
+        System.Enum.TryParse(Random.Range(0, 6).ToString(), out Upgrades upgrade2);
         Upgrade2 = upgrade2.ToString();
-        System.Enum.TryParse(Random.Range(0, 5).ToString(), out Upgrades upgrade3);
+        System.Enum.TryParse(Random.Range(0, 6).ToString(), out Upgrades upgrade3);
         Upgrade3 = upgrade3.ToString();
         button1.GetComponentInChildren<TextMeshProUGUI>().SetText(Upgrade1);
         button2.GetComponentInChildren<TextMeshProUGUI>().SetText(Upgrade2);
@@ -67,6 +70,7 @@ public class LevelUpUpgrades : MonoBehaviour
         button1.SetActive(false);
         button2.SetActive(false);
         button3.SetActive(false);
+        text.SetActive(false);
         Debug.Log(upgrade);
         Debug.Log(Upgrades.Health.ToString());
         float upgradeValue = Random.Range(1, 10);
@@ -90,6 +94,10 @@ public class LevelUpUpgrades : MonoBehaviour
         else if(upgrade == Upgrades.BulletSpeed.ToString())
         {
             gun.GetComponent<WeaponController>()._shootForce += upgradeValue / 100;
+        }
+        else if(upgrade == Upgrades.ShootingLines.ToString())
+        {
+            gun.GetComponent<WeaponController>().AddLines();
         }
         Time.timeScale = 1f;
         button1.GetComponentInChildren<TextMeshProUGUI>().SetText("");

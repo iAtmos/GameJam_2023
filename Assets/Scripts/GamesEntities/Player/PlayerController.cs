@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : AbstractEntity
@@ -23,6 +24,10 @@ public class PlayerController : AbstractEntity
     [Header("Animtaions State")]
     private const string SpeedWalk = nameof(SpeedWalk);
 
+    [Header("UI")]
+    [SerializeField] private TextMeshProUGUI healthBar;
+    [SerializeField] private TextMeshProUGUI expBar;
+
     public LevelUpUpgrades levelUpUpgrades;
     private PlayerInput input;
     public GameObject gameOver;
@@ -36,6 +41,7 @@ public class PlayerController : AbstractEntity
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         animator.SetFloat(SpeedWalk, 0f);
+        SetUI();
     }
 
     protected void OnEnable()
@@ -88,6 +94,7 @@ public class PlayerController : AbstractEntity
     {
         Debug.Log("Player damage recived");
         CurrentHP -= damage;
+        SetUI();
         if (!CheckLiveEyntity())
         {
             gameOver.GetComponent<GameOverMeny>().OnDeath();
@@ -103,5 +110,10 @@ public class PlayerController : AbstractEntity
             exp = 0;
             levelUpUpgrades.GetUpgrades();
         }
+    }
+    public void SetUI()
+    {
+        expBar.SetText(exp + "/10");
+        healthBar.SetText(CurrentHP + "/" + MaxHP);
     }
 }

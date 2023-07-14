@@ -16,8 +16,7 @@ public class GameOverMeny : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene(0);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
         gameObject.SetActive(false);
     }

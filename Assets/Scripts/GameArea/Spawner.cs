@@ -2,28 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
     [field: SerializeField] private GameObject prefabEntity;
     
-    private List<GameObject> isLiveEntity = new List<GameObject>();
+    private int isLiveEntity;
     [field: NonSerialized] public int countLiveEntity = 2;
     [field: NonSerialized] public float speedSpawn = 8f;
     private bool canSpawn = true;
 
     private void Update()
     {
-        if (isLiveEntity.Count < countLiveEntity && canSpawn)
+        if (isLiveEntity < countLiveEntity && canSpawn)
             SpawnEntity();
     }
 
     private void SpawnEntity() 
     {
-        var entitu = Instantiate(prefabEntity, transform.position, transform.rotation);
-        isLiveEntity.Add(entitu);
-        
+        var enemy = Instantiate(prefabEntity, transform.position, transform.rotation);
+        enemy.GetComponent<AIController>()._spawnEnemy = gameObject;
+        isLiveEntity++;
+  
         canSpawn = false;
         StartCoroutine(RefreshSpawn());
     }
@@ -34,8 +36,8 @@ public class Spawner : MonoBehaviour
         canSpawn = true;
     }
 
-    public void DeathEntity(GameObject entity)
+    public void DeathEntity()
     {
-        isLiveEntity.Remove(entity);
+        isLiveEntity--;
     }
 }
