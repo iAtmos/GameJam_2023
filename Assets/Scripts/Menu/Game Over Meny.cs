@@ -7,7 +7,6 @@ using UnityEngine.TextCore.Text;
 
 public class GameOverMeny : MonoBehaviour
 {
-
     public void OnDeath()
     {
         Time.timeScale = 0f;

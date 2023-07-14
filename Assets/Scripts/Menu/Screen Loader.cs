@@ -12,6 +12,7 @@ public class ScreenLoader : MonoBehaviour
 
     public void Exit()
     {
+        Debug.Log("Quiting game");
         Application.Quit();
     }
 }
