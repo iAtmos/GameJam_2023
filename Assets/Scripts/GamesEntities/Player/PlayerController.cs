@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerController : AbstractEntity
 {
@@ -19,6 +21,12 @@ public class PlayerController : AbstractEntity
     [Header("Character level stats")]
     public int currentLevel;
     public int exp;
+    public int score;
+    public Scrollbar ScrollbarHP;
+    public Scrollbar ScrollbarEXP;
+    public TextMeshProUGUI HealthUI;
+    public TextMeshProUGUI KillsUI;
+    public TextMeshProUGUI ScoreUI;
 
     [Header("Animtaions State")]
     private const string SpeedWalk = nameof(SpeedWalk);
@@ -32,6 +40,9 @@ public class PlayerController : AbstractEntity
         input = new PlayerInput();
         input.Enable();
         levelUpUpgrades = GameObject.Find("ManagerGamesScean").gameObject.GetComponent<LevelUpUpgrades>();
+        HealthUI.text = MaxHP.ToString();
+        KillsUI.text = exp.ToString();
+        ScoreUI.text = "0";
         base.Start();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -88,6 +99,8 @@ public class PlayerController : AbstractEntity
     {
         Debug.Log("Player damage recived");
         CurrentHP -= damage;
+        ScrollbarHP.size = CurrentHP / 1000;
+        HealthUI.text = CurrentHP.ToString();
         if (!CheckLiveEyntity())
         {
             gameOver.GetComponent<GameOverMeny>().OnDeath();

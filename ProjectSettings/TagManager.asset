@@ -7,6 +7,7 @@ TagManager:
   - AISystem
   - Bullet
   - Enemy
+  - Light
   layers:
   - Default
   - TransparentFX
@@ -43,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Up Layer
+    uniqueID: 2643773677
+    locked: 0
+  - name: Down Layer
+    uniqueID: 2153935563
     locked: 0
