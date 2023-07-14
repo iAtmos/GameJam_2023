@@ -40,7 +40,7 @@ public class AIController : AbstractEntity
         if (!CheckLiveEyntity())
         {
             GameObject.Find("Player").GetComponent<PlayerController>().exp++;
-            GameObject.Find("Player").GetComponent<PlayerController>().score += 
+            GameObject.Find("Player").GetComponent<PlayerController>().score +=
                 GameObject.Find("Player").GetComponent<PlayerController>().exp * 10;
             GameObject.Find("Player").GetComponent<PlayerController>().KillsUI.text =
                 GameObject.Find("Player").GetComponent<PlayerController>().exp.ToString();
@@ -51,7 +51,7 @@ public class AIController : AbstractEntity
             GameObject.Find("Player").GetComponent<PlayerController>().SetUI();
             _spawnEnemy.GetComponent<Spawner>().DeathEntity();
             Destroy(gameObject);
-        };
+        }
     }
     
     public void DestroyAI()

@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : AbstractEntity
 {
@@ -25,8 +26,12 @@ public class PlayerController : AbstractEntity
     private const string SpeedWalk = nameof(SpeedWalk);
 
     [Header("UI")]
-    [SerializeField] private TextMeshProUGUI healthBar;
-    [SerializeField] private TextMeshProUGUI expBar;
+    public int score;
+    public Scrollbar ScrollbarHP;
+    public Scrollbar ScrollbarEXP;
+    public TextMeshProUGUI HealthUI;
+    public TextMeshProUGUI KillsUI;
+    public TextMeshProUGUI ScoreUI;
 
     public LevelUpUpgrades levelUpUpgrades;
     private PlayerInput input;
@@ -41,6 +46,7 @@ public class PlayerController : AbstractEntity
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         animator.SetFloat(SpeedWalk, 0f);
+        ScoreUI.text = "0";
         SetUI();
     }
 
@@ -113,7 +119,9 @@ public class PlayerController : AbstractEntity
     }
     public void SetUI()
     {
-        expBar.SetText(exp + "/10");
-        healthBar.SetText(CurrentHP + "/" + MaxHP);
+        HealthUI.text = MaxHP.ToString();
+        KillsUI.text = exp.ToString();
+        ScrollbarHP.size = CurrentHP / 1000;
+        HealthUI.text = CurrentHP.ToString();
     }
 }
