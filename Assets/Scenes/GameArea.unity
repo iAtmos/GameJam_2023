@@ -441,9 +441,9 @@ RectTransform:
   m_Father: {fileID: 1498670514}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 960, y: -880}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &101338231 stripped
@@ -875,6 +875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147954622}
   - component: {fileID: 147954623}
+  - component: {fileID: 147954624}
   m_Layer: 0
   m_Name: ManagerGamesScean
   m_TagString: Untagged
@@ -910,6 +911,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fps: 60
+--- !u!114 &147954624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147954621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e894fb35a852d41b245e3bd1e2198a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Upgrade1: 
+  Upgrade2: 
+  Upgrade3: 
+  button1: {fileID: 1879671063}
+  button2: {fileID: 1938017678}
+  button3: {fileID: 286862754}
+  text: {fileID: 868950221}
+  player: {fileID: 586694292}
+  bullet: {fileID: 3908836912680657496, guid: 36916d9fd27c08a41b499c03367f2b68, type: 3}
+  gun: {fileID: 368911770}
 --- !u!1 &161591189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,7 +1654,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &286862755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1650,7 +1673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 178.2, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &286862756
@@ -1696,7 +1719,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 286862757}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147954624}
+        m_TargetAssemblyTypeName: LevelUpUpgrades, Assembly-CSharp
+        m_MethodName: Button3Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &286862757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2010,6 +2045,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &368911770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7420162262472009193, guid: b21ef8ce61739f04193512e535100776, type: 3}
+  m_PrefabInstance: {fileID: 1865655228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &399688221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,6 +3106,11 @@ Transform:
   m_Father: {fileID: 465101621}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &586694292 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2770638916966594247, guid: b21ef8ce61739f04193512e535100776, type: 3}
+  m_PrefabInstance: {fileID: 1865655228}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &603432954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104777,12 +104822,12 @@ GameObject:
   - component: {fileID: 868950224}
   - component: {fileID: 868950223}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Upgrade Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &868950222
 RectTransform:
   m_ObjectHideFlags: 0
@@ -104800,7 +104845,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 43}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868950223
@@ -104886,7 +104931,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -79.39778, y: 0, z: -82.02843, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -106774,9 +106819,9 @@ RectTransform:
   m_Father: {fileID: 1498670514}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -541}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -960, y: -541}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1304866615
@@ -107757,16 +107802,16 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1633105601
-Transform:
+--- !u!224 &1633105601
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633105600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 206.00008, y: -470.0001, z: 0.00004440055}
-  m_LocalScale: {x: 93.1147, y: 93.11467, z: 93.11467}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1879671064}
@@ -107776,6 +107821,11 @@ Transform:
   m_Father: {fileID: 1498670514}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -11, y: -79}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1684486806
 GameObject:
   m_ObjectHideFlags: 0
@@ -108563,6 +108613,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5681916978113878067, guid: b21ef8ce61739f04193512e535100776, type: 3}
+      propertyPath: exp
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681916978113878067, guid: b21ef8ce61739f04193512e535100776, type: 3}
       propertyPath: main
       value: 
       objectReference: {fileID: 0}
@@ -108594,6 +108648,10 @@ PrefabInstance:
       propertyPath: ScrollbarEXP
       value: 
       objectReference: {fileID: 1293558948}
+    - target: {fileID: 5681916978113878067, guid: b21ef8ce61739f04193512e535100776, type: 3}
+      propertyPath: expToNextLevel
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5681916978113878067, guid: b21ef8ce61739f04193512e535100776, type: 3}
       propertyPath: <MaxHP>k__BackingField
       value: 1000
@@ -108697,7 +108755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1879671064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -108716,7 +108774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -180.1, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1879671065
@@ -108762,7 +108820,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879671066}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147954624}
+        m_TargetAssemblyTypeName: LevelUpUpgrades, Assembly-CSharp
+        m_MethodName: Button1Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1879671066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109006,7 +109076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1938017679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -109071,7 +109141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1938017681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 147954624}
+        m_TargetAssemblyTypeName: LevelUpUpgrades, Assembly-CSharp
+        m_MethodName: Button2Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1938017681
 MonoBehaviour:
   m_ObjectHideFlags: 0
