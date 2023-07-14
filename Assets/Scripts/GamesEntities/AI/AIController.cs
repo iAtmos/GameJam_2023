@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -39,6 +40,13 @@ public class AIController : AbstractEntity
         if (!CheckLiveEyntity())
         {
             GameObject.Find("Player").GetComponent<PlayerController>().exp++;
+            GameObject.Find("Player").GetComponent<PlayerController>().score += 
+                GameObject.Find("Player").GetComponent<PlayerController>().exp * 10;
+            GameObject.Find("Player").GetComponent<PlayerController>().KillsUI.text =
+                GameObject.Find("Player").GetComponent<PlayerController>().exp.ToString();
+            GameObject.Find("Player").GetComponent<PlayerController>().ScrollbarEXP.size += 0.1f;
+            GameObject.Find("Player").GetComponent<PlayerController>().ScoreUI.text =
+                GameObject.Find("Player").GetComponent<PlayerController>().score.ToString();
             GameObject.Find("Player").GetComponent<PlayerController>().CheckLvlUp();
             GameObject.Find("Player").GetComponent<PlayerController>().SetUI();
             _spawnEnemy.GetComponent<Spawner>().DeathEntity();
