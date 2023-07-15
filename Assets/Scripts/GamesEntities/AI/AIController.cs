@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class AIController : AbstractEntity
 {
     [Header("AI system controller")]
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
     protected Animator animator;
 
     [Header("Settings AI")]
@@ -14,15 +14,20 @@ public class AIController : AbstractEntity
     [field: SerializeField] private int accelerationAI;
     public GameObject _spawnEnemy;
 
+    public static float MaxHPAI = 100f;
+    public static float MaxSpeedAI = 2f;
+
     protected override void Start()
     {
-        base.Start();
-
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
 
+        base.Start();
+        MaxHP = MaxHPAI;
+        CurrentHP = MaxHPAI;
+        agent.speed = MaxSpeedAI;
+
         agent.angularSpeed = angularSpeedAI;
-        agent.speed = MaxSpeedMove;
         agent.acceleration = accelerationAI;
     }
 

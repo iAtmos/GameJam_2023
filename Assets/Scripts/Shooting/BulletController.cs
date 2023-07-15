@@ -29,7 +29,7 @@ public class BulletController : MonoBehaviour
         //When to explode:
         if (_collisions > _MaxCollisions)
         {
-            Debug.Log("Destroyed by collision");
+            //Debug.Log("Destroyed by collision");
             Destroy(gameObject);
         }
 
@@ -38,7 +38,7 @@ public class BulletController : MonoBehaviour
         if (_maxLifeTime < 0f)
         {
 
-            Debug.Log("Lifetime esceeded");
+            //Debug.Log("Lifetime esceeded");
             Explode();
         }
     }
@@ -55,12 +55,12 @@ public class BulletController : MonoBehaviour
         {
             if (enemy.GetComponent<AIController>() != null)
             {
-                Debug.Log("NPC damage gived");
+                //Debug.Log("NPC damage gived");
                 enemy.GetComponent<AIController>().TakeDamage(_Damage);
             }
             if (enemy.GetComponent<PlayerController>() != null)
             {
-                Debug.Log("Player damage gived");
+                //Debug.Log("Player damage gived");
                 enemy.GetComponent<PlayerController>().TakeDamage(_Damage);
             }
         }
@@ -81,7 +81,7 @@ public class BulletController : MonoBehaviour
         //Explode if bullet has an enemy Directly and explodeOnTouch is activated
         if(collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("Player"))
         {
-            Debug.Log("Hitted some Entity");
+            //Debug.Log("Hitted some Entity");
             Explode();
         }
     }
