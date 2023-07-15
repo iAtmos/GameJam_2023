@@ -1649,9 +1649,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionSpawnShot: {fileID: 8616456312286236758}
   _bullet: {fileID: 4279933873065962702, guid: 8045019837ced934f98c7f7d2c231d2d, type: 3}
-  _shootForce: 0.15
+  _shootForce: 0.1
   target: {fileID: 2770638916966594247, guid: b21ef8ce61739f04193512e535100776, type: 3}
-  _timeBetweenShooting: 0.25
+  _timeBetweenShooting: 0.75
   distanceAttack: 5
 --- !u!65 &5811250922032290639
 BoxCollider:
