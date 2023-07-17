@@ -1691,6 +1691,7 @@ MonoBehaviour:
   <MaxSpeedMove>k__BackingField: 2
   angularSpeedAI: 300
   accelerationAI: 40
+  _spawnEnemy: {fileID: 0}
 --- !u!1 &8688672118990789210
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,6 @@ public class AIAttack : AISystems
 
     public void ÑheckingAttackCondition()
     {
-        Debug.Log(AIStatusCurent);
         if (AIStatusCurent == AIStatus.chase
             && agent.remainingDistance - agent.stoppingDistance < distanceAttack)
         {
